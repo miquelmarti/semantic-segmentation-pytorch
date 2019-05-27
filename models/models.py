@@ -426,12 +426,13 @@ class PPM(nn.Module):
 
         x = self.conv_last(ppm_out)
 
-        if self.use_softmax:  # is True during inference
-            x = nn.functional.interpolate(
-                x, size=segSize, mode='bilinear', align_corners=False)
-            x = nn.functional.softmax(x, dim=1)
-        else:
-            x = nn.functional.log_softmax(x, dim=1)
+        # Commented to be used for regression tasks
+        #if self.use_softmax:  # is True during inference
+        #    x = nn.functional.interpolate(
+        #        x, size=segSize, mode='bilinear', align_corners=False)
+        #    x = nn.functional.softmax(x, dim=1)
+        #else:
+        #    x = nn.functional.log_softmax(x, dim=1)
         return x
 
 

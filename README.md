@@ -1,3 +1,7 @@
+**!! Modified to use the model builder for regression tasks too !!**
+- Removed softmax at end of decoder.
+
+
 # Semantic Segmentation on MIT ADE20K dataset in PyTorch
 
 This is a PyTorch implementation of semantic segmentation models on MIT ADE20K scene parsing dataset.
